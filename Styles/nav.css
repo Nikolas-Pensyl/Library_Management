@@ -1,0 +1,75 @@
+  header::after {
+    content:'';
+    display: table;
+    clear: both;
+  }
+  
+  .logo {
+    float: left;
+    width: 5%;
+    height: 5%;
+  }
+  
+  nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  }
+  nav li {
+      display: inline-block;
+      margin-left: 70px;
+      padding-top: 5px;
+    
+      position: relative;
+    }
+  
+    nav a {
+      color: #FFE000;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+    
+    nav a:hover {
+      color: #DBC000;
+    }
+    
+    nav a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background-color: #FFE000;
+    
+      position: absolute;
+      top: 0;
+      width: 0%;
+    
+      transition: all ease-in-out 250ms;
+    }
+    .navbar-collapse.collapse.in {
+    	display: block!important;
+    }
+    
+    nav a:hover::before {
+      width: 100%;
+  }
+
+  .navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .1rem 1rem;
+}
+
+.bg-dark {
+    background-color: #339C5E!important;
+}
+
+body > div > header > nav > button > div > ul > li {
+  box-sizing: content-box;
