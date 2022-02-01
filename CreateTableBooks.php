@@ -5,9 +5,8 @@
 	$sql = "CREATE TABLE IF NOT EXISTS Books (
 	Title varchar(50) NOT NULL,
 	Author varchar(20) NOT NULL,
-	Description varchar(20) NOT NULL,
-	Genre varchar(10) NOT NULL,
-	Page_Count int NOT NULL,
+	ISBN int NOT NULL,
+	Copies int NOT NULL,
 	CONSTRAINT PK_Books PRIMARY KEY (Title,Author)
 )";
 
