@@ -1,0 +1,9 @@
+.mainbody{
+    background-color: gray;
+    position: fixed;
+    left: 200px;
+    right: 200px;
+    top: 0px;
+    bottom: 0px;
+    z-index: -1;
+}

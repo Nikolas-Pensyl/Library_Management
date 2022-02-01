@@ -26,7 +26,7 @@
 						<li><a href="#About">Edit Members</a></li>
 						<li><a href="#Sponsors">Partners</a></li>
 						<li><a href="main.php">Borrow Books</a></li>
-						<li><a href="main.php">Search</a></li>
+						<li><a href="search.html">Search</a></li>
 						<li><a href="main.php">Login</a></li>
 					</ul>
 				</div>
