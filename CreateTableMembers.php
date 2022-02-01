@@ -4,9 +4,10 @@
 	// sql to create table
 	$sql = "CREATE TABLE IF NOT EXISTS Members (
 	Name varchar(20) NOT NULL,
-	Checked_Books int NOT NULL,
-	Age int NOT NULL,
-	CONSTRAINT PK_Books PRIMARY KEY (Name)
+	U_Card int NOT NULL,
+	Address varchar(30) NOT NULL,
+	Phone varchar(15) NOT NULL,
+	CONSTRAINT PK_Books PRIMARY KEY (Name,U_Card)
 )";
 
 
