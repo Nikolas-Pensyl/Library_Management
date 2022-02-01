@@ -22,12 +22,12 @@
         		</button>
         		<div class="navbar-collapse collapse" id="collapsingnavbar">
 					<ul class="navbar-nav nav-fill">
-						<li><a href="index.php">Home</a></li>
+						<li><a href="main.php">Home</a></li>
 						<li><a href="#About">Edit Members</a></li>
 						<li><a href="#Sponsors">Partners</a></li>
-						<li><a href="index.php">Borrow Books</a></li>
-						<li><a href="index.php">Search</a></li>
-						<li><a href="index.php">Login</a></li>
+						<li><a href="main.php">Borrow Books</a></li>
+						<li><a href="main.php">Search</a></li>
+						<li><a href="main.php">Login</a></li>
 					</ul>
 				</div>
 			</nav>
