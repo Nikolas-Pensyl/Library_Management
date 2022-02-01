@@ -31,14 +31,14 @@
     }
     
     nav a:hover {
-      color: #DBC000;
+      color: #000000;
     }
     
     nav a::before {
       content: '';
       display: block;
       height: 5px;
-      background-color: #FFE000;
+      background-color: #FFFFFF;
     
       position: absolute;
       top: 0;
@@ -68,7 +68,7 @@
 }
 
 .bg-dark {
-    background-color: #339C5E!important;
+    background-color: #FFFFFF!important;
 }
 
 body > div > header > nav > button > div > ul > li {
