@@ -1,0 +1,27 @@
+create table members (
+	id int AUTO_INCREMENT,
+    	fname varchar(50),
+    	lname varchar(50),
+    	address varchar(200),
+    	phone char(10),
+    	staff BINARY,
+    	constraint members_id_pk primary key (id)
+);
+
+create table books (
+	isbn varchar(50),
+   	title varchar(100),
+    	author varchar(100),
+    	copies int,
+	shor_term binary,
+    	constraint books_isbn_pk primary key (isbn)
+);
+
+create table checkout(
+	member_id int,
+    	book_isbn varchar(50),
+    	out_date date,
+    	due_date date,
+    	constraint checkout_member_fk foreign key (member_id) references members (id),
+    	constraint checkout_book_fk foreign key (book_isbn) references books (isbn)
+);
