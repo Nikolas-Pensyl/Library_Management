@@ -25,8 +25,8 @@
 			<div class = mainbody>
 				<div>
 					<form >
-						<input type="text">
-						<input type="submit" value="Search">
+						<input id="Search_Field" type="text" name="Search_Field">
+						<input  type="submit" value="Search">
 					</form>
 				</div>
 			</div>

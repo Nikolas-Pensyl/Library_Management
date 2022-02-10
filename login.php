@@ -19,6 +19,16 @@
 		<div id="nav-placeholder"></div>
 	</head>
 	<body>
-
+    <div>
+			<div class = mainbody>
+				<div>
+					<form >
+						<p>username: </p><input id="User_Field" type="text" name="User_Field">
+                        <p>password: </p><input id="Pass_Field" type="text" name="Pass_Field">
+						<input type="submit" value="Login">
+					</form>
+				</div>
+			</div>
+		</div>
 	</body>	
 </html>
