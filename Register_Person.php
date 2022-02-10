@@ -26,7 +26,8 @@
 						<p>first name: </p><input id="fname" type="text" name="fname">
                         <p>last name: </p><input id="lname" type="text" name="lname">
                         <p>phone: </p><input id="phone" type="text" name="phone">
-                        <p>address: </p><input id="address" type="checkbox" name="address">
+                        <p>address: </p><input id="address" type="text" name="address">
+                        <p>Is staff? </p><input id="staff" type="checkbox" name="staff">
 						<input type="submit" value="Register New Member">
 					</form>
 				</div>
