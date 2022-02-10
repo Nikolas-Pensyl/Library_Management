@@ -19,36 +19,5 @@
 		<div id="nav-placeholder"></div>
 	</head>
 	<body>
-
-<<<<<<< HEAD
-	
-	
-	
-	  	<header>
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingnavbar">
-            		<span class="navbar-toggler-icon"></span>
-        		</button>
-        		<div class="navbar-collapse collapse" id="collapsingnavbar">
-					<ul class="navbar-nav nav-fill">
-						<li><a href="main.php">Home</a></li>
-						<li><a href="#About">Edit Members</a></li>
-						<li><a href="#Sponsors">Partners</a></li>
-						<li><a href="main.php">Borrow Books</a></li>
-						<li><a href="search.php">Search</a></li>
-						<li><a href="main.php">Login</a></li>
-					</ul>
-				</div>
-			</nav>
-		</header>
-	
-
-
-
-
-
-</div>
-=======
->>>>>>> 575e83a0125751ed4910967d5b0f7ecaa3b6dce7
 	</body>	
 </html>
