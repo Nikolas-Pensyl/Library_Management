@@ -17,19 +17,21 @@
 			});
 		</script>
 		<div id="nav-placeholder"></div>
-        <title>login</title>
+        <title>Add Book</title>
 	</head>
 	<body>
-	<div class = "center">
-		<h1 class = "Intro">Login</h1>
-	</div>
+		<div class = "center">
+			<h1 class = "Intro">Registration</h1>
+		</div>
     <div>
 			<div class = mainbody>
 				<div>
-					<form >
-						<label for="User_Field">Username: </label><input id="User_Field" type="text" name="User_Field"><br><br>
-                        <label for="Pass_Field">Password: </label><input id="Pass_Field" type="text" name="Pass_Field"><br><br>
-						<input type="submit" value="Login">
+					<form action="/add_member.php">
+                        <label for="title">Title:  </label><input id="title" type="text" name="title"><br><br>
+                        <label for="ISBN">ISBN:  </label><input id="ISBN" type="text" name="ISBN"><br><br>
+                        <label for="author">Author:  </address></label><input id="author" type="text" name="author"><br><br>
+                        <label for="count">Amount of Books:  </label><input id="count" type="number" name="count" ><br><br>
+						<input type="submit" value="Add New Book">
 					</form>
 				</div>
 			</div>

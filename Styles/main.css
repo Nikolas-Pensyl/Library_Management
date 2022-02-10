@@ -21,3 +21,10 @@
 	color: rgb(51, 156, 94);
 	border: 3px solid rgb(255, 224, 0);
 	}
+
+.center {
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	padding: 10px;
+	}

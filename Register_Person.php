@@ -17,17 +17,21 @@
 			});
 		</script>
 		<div id="nav-placeholder"></div>
+        <title>Register Person</title>
 	</head>
 	<body>
+		<div class = "center">
+			<h1 class = "Intro">Registration</h1>
+		</div>
     <div>
 			<div class = mainbody>
 				<div>
 					<form action="/add_member.php">
-						<p>first name: </p><input id="fname" type="text" name="fname">
-                        <p>last name: </p><input id="lname" type="text" name="lname">
-                        <p>phone: </p><input id="phone" type="text" name="phone">
-                        <p>address: </p><input id="address" type="text" name="address">
-                        <p>Is staff? </p><input id="staff" type="checkbox" name="staff">
+                        <label for="fname">First name:  </label><input id="fname" type="text" name="fname"><br><br>
+                        <label for="lname">Last name:  </label><input id="lname" type="text" name="lname"><br><br>
+                        <label for="phone">Phone number:  </label><input id="phone" type="text" name="phone"><br><br>
+                        <label for="address">Address:  </address></label><input id="address" type="text" name="address"><br><br>
+                        <label for="staff">Is staff?  </label><input id="staff" type="checkbox" name="staff"><br><br>
 						<input type="submit" value="Register New Member">
 					</form>
 				</div>

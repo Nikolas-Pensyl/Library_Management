@@ -17,7 +17,11 @@
 			});
 		</script>
 		<div id="nav-placeholder"></div>
+		<title>main</title>
 	</head>
 	<body>
+		<div class = "center">
+			<h1 class = "Intro">Welcome to our Library</h1>
+		</div>
 	</body>	
 </html>

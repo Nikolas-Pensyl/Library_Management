@@ -21,6 +21,9 @@
 		<title>Search</title>
 	</head>
 	<body>
+		<div class="center">
+			<h1 class = "Intro">Search Books</h1>
+		</div>
 		<div>
 			<div class = mainbody>
 				<div>
