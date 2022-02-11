@@ -27,8 +27,8 @@
 		<div>
 			<div class = mainbody>
 				<div>
-					<form >
-						<input id="Search_Field" type="text" name="Search_Field">
+					<form action="./search_books.php" method="POST">
+						<input class = "span" id="Search_Field" type="text" name="Search_Field">
 						<input  type="submit" value="Search">
 					</form>
 				</div>

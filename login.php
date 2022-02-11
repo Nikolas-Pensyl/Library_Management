@@ -24,11 +24,11 @@
 		<h1 class = "Intro">Login</h1>
 	</div>
     <div>
-			<div class = mainbody>
+			<div class = "mainbody center">
 				<div>
 					<form >
-						<label for="User_Field">Username: </label><input id="User_Field" type="text" name="User_Field"><br><br>
-                        <label for="Pass_Field">Password: </label><input id="Pass_Field" type="text" name="Pass_Field"><br><br>
+						<label for="User_Field">Username: </label><input class="input" id="User_Field" type="text" name="User_Field"><br><br>
+                        <label for="Pass_Field">Password: </label><input class="input" id="Pass_Field" type="text" name="Pass_Field"><br><br>
 						<input type="submit" value="Login">
 					</form>
 				</div>

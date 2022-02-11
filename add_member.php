@@ -10,17 +10,16 @@
 	$isStaff = $_POST['staff'];
 	
 	
-	$stmt = "insert into members (fname, lname, address, phone, staff)
-		values ('$fname', '$lname', '$address', '$phone', $isStaff);";
+	$stmt = "insert into members (id, fname, lname, address, phone, staff)
+		values (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', '{$isStaff}');";
 	
 	$result = mysqli_query($conn, $stmt);
-	
-	echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
 
-	if(result) {
+	if($result) {
 	    echo "Success!";
 	} else {
 	    echo "Error: Cannot add new library member.<br>" . mysqli_error($conn);
 	}
+	//echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
 
 ?>

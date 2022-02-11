@@ -21,17 +21,17 @@
 	</head>
 	<body>
 		<div class = "center">
-			<h1 class = "Intro">Registration</h1>
+			<h1 class = "Intro">Memebr/Staff Registration</h1>
 		</div>
     <div>
-			<div class = mainbody>
+			<div class = "mainbody center">
 				<div>
-					<form action="/add_member.php">
-                        <label for="fname">First name:  </label><input id="fname" type="text" name="fname"><br><br>
-                        <label for="lname">Last name:  </label><input id="lname" type="text" name="lname"><br><br>
-                        <label for="phone">Phone number:  </label><input id="phone" type="text" name="phone"><br><br>
-                        <label for="address">Address:  </address></label><input id="address" type="text" name="address"><br><br>
-                        <label for="staff">Is staff?  </label><input id="staff" type="checkbox" name="staff"><br><br>
+					<form action="./add_member.php">
+                        <label for="fname">First name:  </label><input class="input" id="fname" type="text" name="fname"><br><br>
+                        <label for="lname">Last name:  </label><input class="input" id="lname" type="text" name="lname"><br><br>
+                        <label for="phone">Phone number:  </label><input class="input" id="phone" type="text" name="phone"><br><br>
+                        <label for="address">Address:  </address></label><input class="input" id="address" type="text" name="address"><br><br>
+                        <label for="staff">Is staff?  </label><input class="input" id="staff" type="checkbox" name="staff"><br><br>
 						<input type="submit" value="Register New Member">
 					</form>
 				</div>
