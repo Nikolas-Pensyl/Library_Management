@@ -26,11 +26,11 @@
     <div>
 			<div class = "mainbody center">
 				<div>
-					<form action="./add_member.php">
+					<form action="./add_member.php" method="POST">
                         <label for="fname">First name:  </label><input class="input" id="fname" type="text" name="fname"><br><br>
                         <label for="lname">Last name:  </label><input class="input" id="lname" type="text" name="lname"><br><br>
                         <label for="phone">Phone number:  </label><input class="input" id="phone" type="text" name="phone"><br><br>
-                        <label for="address">Address:  </address></label><input class="input" id="address" type="text" name="address"><br><br>
+                        <label for="address">Address:  </label><input class="input" id="address" type="text" name="address"><br><br>
                         <label for="staff">Is staff?  </label><input class="input" id="staff" type="checkbox" name="staff"><br><br>
 						<input type="submit" value="Register New Member">
 					</form>

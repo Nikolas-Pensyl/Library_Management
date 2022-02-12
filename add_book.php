@@ -8,18 +8,12 @@
 	$address = $_POST['address'];
 	$phone = $_POST['phone'];
 	$isStaff = $_POST['staff'];
-	if($isStaff=="on") {
-		$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 1);";
-		echo "1";
-	} else {
-		$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 0);";
-		echo "0";
-	}
 	
+	$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', '{$isStaff}');";
 	
 	$result = mysqli_query($conn, $stmt);
 	if($result) {
-		echo $isStaff;
+		echo $fname . "Test	";
 	    echo "Success!";
 		
 	} else {

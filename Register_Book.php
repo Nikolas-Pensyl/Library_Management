@@ -26,7 +26,7 @@
     <div>
 			<div class = "mainbody center">
 				<div>
-					<form action="/add_member.php">
+					<form action="./add_member.php">
                         <label for="title">Title:  </label><input class="input" id="title" type="text" name="title"><br><br>
                         <label for="ISBN">ISBN:  </label><input class="input" id="ISBN" type="text" name="ISBN"><br><br>
                         <label for="author">Author:  </address></label><input class="input" id="author" type="text" name="author"><br><br>
