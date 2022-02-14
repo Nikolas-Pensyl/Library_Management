@@ -32,6 +32,10 @@
                         <label for="phone">Phone number:  </label><input class="input" id="phone" type="text" name="phone"><br><br>
                         <label for="address">Address:  </label><input class="input" id="address" type="text" name="address"><br><br>
                         <label for="staff">Is staff?  </label><input class="input" id="staff" type="checkbox" name="staff"><br><br>
+						<label for="usern">Username:  </label><input class="input" id="usern" type="text" name="usern"><br><br>
+                        <label for="passw">Password:  </label><input class="input" id="passw" type="password" name="passw"><br><br>
+						<label for="conpassw">Confirm Password:  </label><input class="input" id="conpassw" type="password" name="conpassw"><br><br>
+						<script src="edit_register_person.js"></script>
 						<input type="submit" value="Register New Member">
 					</form>
 				</div>

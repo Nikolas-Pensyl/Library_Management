@@ -26,11 +26,12 @@
     <div>
 			<div class = "mainbody center">
 				<div>
-					<form action="./add_member.php">
+					<form action="./add_book.php" method="POST">
                         <label for="title">Title:  </label><input class="input" id="title" type="text" name="title"><br><br>
                         <label for="ISBN">ISBN:  </label><input class="input" id="ISBN" type="text" name="ISBN"><br><br>
                         <label for="author">Author:  </address></label><input class="input" id="author" type="text" name="author"><br><br>
                         <label for="count">Amount of Books:  </label><input class="input" id="count" type="number" name="count" ><br><br>
+						<label for="short">Short Term rental?  </label><input class="input" id="short" type="checkbox" name="short"><br><br>
 						<input type="submit" value="Add New Book">
 					</form>
 				</div>

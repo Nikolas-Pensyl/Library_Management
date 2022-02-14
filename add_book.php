@@ -3,17 +3,24 @@
 	include 'CONNECT.php';
 	
 	
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$address = $_POST['address'];
-	$phone = $_POST['phone'];
-	$isStaff = $_POST['staff'];
+	$ISBN = $_POST['ISBN'];
+	$author = $_POST['author'];
+	$title = $_POST['title'];
+	$count = $_POST['count'];
+	$short = $_POST['short'];
+
+
+	if($short=="on") {
+		$short = 1;
+	} else {
+		$short = 0;
+	}
+	$stmt = "INSERT INTO books (isbn, title, author, copies, shor_term) VALUES ('{$ISBN}', '{$title}', '{$author}', '{$count}', {$short});";
+
 	
-	$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', '{$isStaff}');";
 	
 	$result = mysqli_query($conn, $stmt);
 	if($result) {
-		echo $fname . "Test	";
 	    echo "Success!";
 		
 	} else {
