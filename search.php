@@ -25,7 +25,7 @@
 			<h1 class = "Intro">Search Books</h1>
 		</div>
 		<div>
-			<div class = mainbody>
+			<div class = "mainbody center"	>
 				<div>
 					<form action="./search_books.php" method="POST">
 						<input class = "span" id="Search_Field" type="text" name="Search_Field">

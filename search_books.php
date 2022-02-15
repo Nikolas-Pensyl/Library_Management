@@ -1,25 +1,67 @@
-<?php
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+		<script src="jquery-3.4.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/flexslider.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    	<link rel="stylesheet" type="text/css" href="./Styles/main.css">
+		<link rel="stylesheet" type="text/css" href="./Styles/nav.css">
+		<link rel = stylesheet href = Styles/body.css type = text/css>
+		<script>
+			$(new Document).ready(function() {
+				$("#nav-placeholder").load("nav.html");
+			});
+		</script>
+		<div id="nav-placeholder"></div>
+		<title>Search</title>
+	</head>
+	<body>
+		<div class="center">
+			<h1 class = "Intro">Search Books</h1>
+		</div>
+		<div>
+			<div class = "mainbody center">
+				<div>
+					<form action="./search_books.php" method="POST">
+						<input class = "span" id="Search_Field" type="text" name="Search_Field">
+						<input  type="submit" value="Search">
+					</form>
+				</div>
+        <?php
+            include 'CONNECT.php';
+            
+            
+            $searcher = $_POST['Search_Field'];
+            
+            //The line below is the one with the issue
+            $stmt = "SELECT * from books where title='{$searcher}';"; 
+            
+            //It is telling me that my varialbe '$stmt' is empty
+            $result = mysqli_query($conn, $stmt);
 
-	include 'CONNECT.php';
-	
-	
-	$searcher = $_POST['Search_Field'];
-	
-  //The line below is the one with the issue
-  $stmt = "SELECT * from books where title='{$searcher}';"; 
-	
-  //It is telling me that my varialbe '$stmt' is empty
-	$result = mysqli_query($conn, $stmt);
+            if ($result->num_rows > 0) {
+              // output data of each row
+              $i = 1;
+              while($row = $result->fetch_assoc()) {
+                if($i%2==0) {
+                  echo "<div class=\"dck-clr search\"><p class=\"searchtxt\">".$i . ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p><br><br></div>";
+                } else {
+                  echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p><br><br></div>";
+                }
+                
+                $i = $i +1;
+              }
+            } else {
+              echo "0 results";
+            }
 
-  if ($result->num_rows > 0) {
-    // output data of each row
-    $i = 1;
-    while($row = $result->fetch_assoc()) {
-      echo $i . "  Title: " . $row["title"]. " <br>Author: " . $row["author"]. "<br> ISBN: " . $row["isbn"]. "<br><br>";
-      $i = $i +1;
-    }
-  } else {
-    echo "0 results";
-  }
-
-?>
+          ?>
+			</div>
+		</div>
+	</body>
+</html>
