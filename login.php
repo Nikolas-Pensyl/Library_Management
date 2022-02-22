@@ -26,7 +26,7 @@
     <div>
 			<div class = "mainbody center">
 				<div>
-					<form >
+					<form action="login-query.php" method="POST">
 						<label for="User_Field">Username: </label><input class="input" id="User_Field" type="text" name="User_Field"><br><br>
                         <label for="Pass_Field">Password: </label><input class="input" id="Pass_Field" type="password" name="Pass_Field"><br><br>
 						<input type="submit" value="Login">
