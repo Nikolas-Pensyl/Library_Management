@@ -22,45 +22,17 @@
 	</head>
 	<body>
 		<div class="center">
-			<h1 class = "Intro">Search Books</h1>
+			<h1 class = "Intro">Edit People</h1>
+			<h6 class = "Intro">Start by searching for a person you want to edit or delete then click on edit or to based on your desire.</h6>
 		</div>
 		<div>
 			<div class = "mainbody center">
 				<div>
-					<form action="./search_books.php" method="POST">
+					<form action="./people_search.php" method="POST">
 						<input class = "span" id="Search_Field" type="text" name="Search_Field">
 						<input  type="submit" value="Search">
 					</form>
 				</div>
-        <?php
-            include 'CONNECT.php';
-            
-            
-            $searcher = $_POST['Search_Field'];
-            
-            //The line below is the one with the issue
-            $stmt = "SELECT * from books where title='{$searcher}';"; 
-            
-            //It is telling me that my varialbe '$stmt' is empty
-            $result = mysqli_query($conn, $stmt);
-
-            if ($result->num_rows > 0) {
-              // output data of each row
-              $i = 1;
-              while($row = $result->fetch_assoc()) {
-                if($i%2==0) {
-                  echo "<div class=\"dck-clr search\"><p class=\"searchtxt\">".$i . ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p><br><br></div>";
-                } else {
-                  echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p><br><br></div>";
-                }
-                
-                $i = $i +1;
-              }
-            } else {
-              echo "0 results";
-            }
-
-          ?>
 			</div>
 		</div>
 	</body>

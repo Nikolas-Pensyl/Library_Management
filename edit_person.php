@@ -17,21 +17,30 @@
 			});
 		</script>
 		<div id="nav-placeholder"></div>
-        <title>login</title>
+        <title>Edit Person</title>
 	</head>
 	<body>
-	<div class = "center">
-		<h1 class = "Intro">Login</h1>
-	</div>
+		<div class = "center">
+			<h1 class = "Intro">Memebr/Staff Registration</h1>
+		</div>
     <div>
 			<div class = "mainbody center">
-				<div>
-					<form action="./login-query.php" method="POST">
-						<label for="User_Field">Username: </label><input class="input" id="User_Field" type="text" name="User_Field"><br><br>
-                        <label for="Pass_Field">Password: </label><input class="input" id="Pass_Field" type="password" name="Pass_Field"><br><br>
-						<input type="submit" value="Login">
+                <?php
+                echo"<div>
+					<form action="./add_member.php" method="POST">
+                        <label for="fname">First name:  </label><input class="input" id="fname" type="text" name="fname"><br><br>
+                        <label for="lname">Last name:  </label><input class="input" id="lname" type="text" name="lname"><br><br>
+                        <label for="phone">Phone number:  </label><input class="input" id="phone" type="text" name="phone"><br><br>
+                        <label for="address">Address:  </label><input class="input" id="address" type="text" name="address"><br><br>
+                        <label for="staff">Is staff?  </label><input class="input" id="staff" type="checkbox" name="staff"><br><br>
+						<label for="usern">Username:  </label><input class="input" id="usern" type="text" name="usern"><br><br>
+                        <label for="passw">Password:  </label><input class="input" id="passw" type="password" name="passw"><br><br>
+						<label for="conpassw">Confirm Password:  </label><input class="input" id="conpassw" type="password" name="conpassw"><br><br>
+						<script src="edit_register_person.js"></script>
+						<input type="submit" value="Edit New Member">
 					</form>
-				</div>
+				</div>";
+                ?>
 			</div>
 		</div>
 	</body>	

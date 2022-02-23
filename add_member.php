@@ -8,11 +8,16 @@
 	$address = $_POST['address'];
 	$phone = $_POST['phone'];
 	$isStaff = $_POST['staff'];
+	$manager = $_POST['manager'];
 	if($isStaff=="on") {
-		$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 1);";
+		if($manager=="on") {
+			$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 1, 1);";
+		} else {
+			$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 1, 0);";
+		}
 		echo "1";
 	} else {
-		$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 0);";
+		$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 0, 0);";
 		echo "0";
 	}
 	

@@ -2,7 +2,7 @@
 <html>	
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-		<script src="jquery-3.4.1.min.js"></script>
+		<script src="./scripts/jquery-3.4.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/flexslider.css">
@@ -13,7 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="./Styles/nav.css">
 		<script>
 			$(new Document).ready(function() {
-				$("#nav-placeholder").load("nav.html");
+				$("#nav-placeholder").load("nav.php");
 			});
 		</script>
 		<div id="nav-placeholder"></div>
@@ -32,10 +32,11 @@
                         <label for="phone">Phone number:  </label><input class="input" id="phone" type="text" name="phone"><br><br>
                         <label for="address">Address:  </label><input class="input" id="address" type="text" name="address"><br><br>
                         <label for="staff">Is staff?  </label><input class="input" id="staff" type="checkbox" name="staff"><br><br>
+						<label for="manager">Is manager?  </label><input class="input" id="manager" type="checkbox" name="manager"><br><br>
 						<label for="usern">Username:  </label><input class="input" id="usern" type="text" name="usern"><br><br>
                         <label for="passw">Password:  </label><input class="input" id="passw" type="password" name="passw"><br><br>
 						<label for="conpassw">Confirm Password:  </label><input class="input" id="conpassw" type="password" name="conpassw"><br><br>
-						<script src="edit_register_person.js"></script>
+						<script src="./scripts/edit_register_person.js"></script>
 						<input type="submit" value="Register New Member">
 					</form>
 				</div>

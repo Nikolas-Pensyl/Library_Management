@@ -21,7 +21,7 @@ $short_term = mysqli_fetch_assoc($result);
 
 
 $date = date("Y-M-D");
-if($short_term) {
+if($short_term==1) {
 	$duedate = date_add($date, date_interval_create_from_date_string("7 days"));
 } else {
 	$duedate = date_add($date, date_interval_create_from_date_string("28 days"));
