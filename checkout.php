@@ -30,7 +30,7 @@ if($short_term==1) {
 
 if($checked_out >= 12) {
 	die("You can't check out more than 12 books. Please return some books before trying to borrow more.");
-} else if(($checked_out >=6 && ($isStaff == false)) {
+} else if(($checked_out >=6 && ($isStaff == 0)) {
 	die("You can't check out more than 6 books. Please return some books before trying to borrow more.");
 } else {
 	$stmt = "insert into checkout
