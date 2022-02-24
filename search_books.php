@@ -33,6 +33,7 @@
 					</form>
 				</div>
         <?php
+		session_start();
             include 'CONNECT.php';
             
             

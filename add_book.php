@@ -13,7 +13,7 @@
 	$short = $_POST['short'];
 
 
-	if($short=="on") {
+	if(!empty($short)&&$short=="on") {
 		$short = 1;
 	} else {
 		$short = 0;

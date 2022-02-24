@@ -20,15 +20,15 @@
 
 	if($isStaff=="on") {
 		if($manager=="on") {
-			$stmt = "update members set fname='{$fname}' lname='{$lname}' address='{$address}' phone='{$phone}' staff=BIN(1) manager=BIN(1) where id='{$id}';";
+			$stmt = "update members set fname='{$fname}', lname='{$lname}', address='{$address}', phone='{$phone}', staff=BIN(1), manager=BIN(1) where id='{$id}';";
 		} else {
-			$stmt = "update members set fname='{$fname}' lname='{$lname}' address='{$address}' phone='{$phone}' staff=BIN(1) manager=BIN(0) where id='{$id}';";
+			$stmt = "update members set fname='{$fname}', lname='{$lname}', address='{$address}', phone='{$phone}', staff=BIN(1), manager=BIN(0) where id='{$id}';";
 		}
-		$stmtt = "update login set pass='{$user}' user='{$pass}' where id='{$id}';";
+		$stmtt = "update login set pass='{$pass}', user='{$user}' where id='{$id}';";
 		$result = mysqli_query($conn, $stmt);
 	} else {
-        $stmt = "update members set fname='{$fname}' lname='{$lname}' address='{$address}' phone='{$phone}' staff=BIN(0) manager=BIN(0) where id='{$id}';";
-		$stmtt = "update login set pass='NULL' user='NULL' where id='{$id}';";
+        $stmt = "update members set fname='{$fname}', lname='{$lname}', address='{$address}', phone='{$phone}', staff=BIN(0), manager=BIN(0) where id='{$id}';";
+		$stmtt = "update login set pass=NULL, user=NULL where id='{$id}';";
 		$result = mysqli_query($conn, $stmt); 
 	}
 	
