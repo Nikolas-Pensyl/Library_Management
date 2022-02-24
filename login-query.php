@@ -1,6 +1,11 @@
 <?php
 
 	include 'CONNECT.php';
+
+	session_start();
+	if(!empty($_SESSION['id'])) {
+		echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
+	}
 	
 	
 
@@ -11,10 +16,26 @@
 
     $result = mysqli_query($conn, $stmt);
 	if(!empty($result)) {
-		session_start();
         $row = $result->fetch_assoc();
         $_SESSION["id"] = $row['id'];
-        echo $_SESSION["id"];
+        $stmt = "SELECT * from members where id='{$row['id']}';";
+        $result = mysqli_query($conn, $stmt);
+        if(!empty($result)) {
+            $row = $result->fetch_assoc();
+            if($row['staff']==1) {
+                $_SESSION["staff"] = 1;
+                if($row['manager']==1) {
+                    $_SESSION["manager"] = 1;
+                } else {
+                    $_SESSION["manager"] = 0;
+                }
+            } else {
+                $_SESSION["staff"] = 0;
+                $_SESSION["manager"] = 0;
+            }
+        } else {
+            session_destroy();
+        }
 	} else {
 		echo "<script> alert(\"Hello! I am an alert box!!\");</script>";
         echo "test";

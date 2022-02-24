@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(empty($_SESSION['manager']) || $_SESSION['manager']==0) {
+		echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
+	}
+	?>
+
 <!DOCTYPE html>
 <html>	
 	<head>
@@ -24,9 +31,7 @@
 			<h1 class = "Intro">Memebr/Staff Registration</h1>
 		</div>
     <div>
-			<div class = "mainbody center">
-                <?php
-                echo"<div>
+			<div class = "mainbody center"><div>
 					<form action="./add_member.php" method="POST">
                         <label for="fname">First name:  </label><input class="input" id="fname" type="text" name="fname"><br><br>
                         <label for="lname">Last name:  </label><input class="input" id="lname" type="text" name="lname"><br><br>
@@ -39,8 +44,7 @@
 						<script src="edit_register_person.js"></script>
 						<input type="submit" value="Edit New Member">
 					</form>
-				</div>";
-                ?>
+				</div>
 			</div>
 		</div>
 	</body>	

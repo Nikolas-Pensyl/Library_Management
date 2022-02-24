@@ -1,9 +1,19 @@
 .mainbody{
     background-color: gray;
     position: fixed;
-    left: 200px;
-    right: 200px;
+    left: 5%;
+    right: 5%;
     top: 100px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+.mainbods{
+    background-color: gray;
+    position: fixed;
+    top: 150px;
+    left: 5%;
+    right: 5%;
     bottom: 0px;
     z-index: -1;
 }

@@ -24,9 +24,9 @@
 
 .center {
 	margin: auto;
-	width: 50%;
+	width: auto;
 	text-align: center;
-	padding: 10px;
+	padding: auto;
 	}
 .input{
 	margin-left: 8px

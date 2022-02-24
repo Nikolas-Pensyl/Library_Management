@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if(empty($_SESSION['manager']) || $_SESSION['manager']==0) {
+		echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
+	}
+	?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,7 +32,7 @@
 			<h6 class = "Intro">Start by searching for a person you want to edit or delete then click on edit or to based on your desire.</h6>
 		</div>
 		<div>
-			<div class = "mainbody center">
+			<div class = "mainbods center">
 				<div>
 					<form action="./people_search.php" method="POST">
 						<input class = "span" id="Search_Field" type="text" name="Search_Field">

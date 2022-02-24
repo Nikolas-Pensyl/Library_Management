@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if(!empty($_SESSION['id'])) {
+		echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
+	}
+	?>
 <!DOCTYPE html>
 <html>	
 	<head>
