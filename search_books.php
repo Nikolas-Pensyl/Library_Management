@@ -33,14 +33,14 @@
 					</form>
 				</div>
         <?php
-		session_start();
+			session_start();
             include 'CONNECT.php';
             
             
             $searcher = $_POST['Search_Field'];
             
             //The line below is the one with the issue
-            $stmt = "SELECT * from books where title like '%{$searcher}%';"; 
+            $stmt = "SELECT * from books where title like '{$searcher}';"; 
             
             //It is telling me that my varialbe '$stmt' is empty
             $result = mysqli_query($conn, $stmt);
@@ -50,10 +50,23 @@
               $i = 1;
               while($row = $result->fetch_assoc()) {
                 if($i%2==0) {
-                  echo "<div class=\"dck-clr search\"><p class=\"searchtxt\">".$i . ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p><br><br></div>";
+                  echo "<div class=\"dck-clr search\"><p class=\"searchtxt\">".$i . ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p><br><br>";
                 } else {
-                  echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p><br><br></div>";
+                  echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p><br><br>";
                 }
+				if(!empty($_SESSION['id'])&&!empty($_SESSION['staff'])&&$_SESSION['staff']==1) {
+					echo "<form action=\"./checkout_form.php\" method=\"POST\">";
+					echo "<input type=\"submit\" value=\"Checkout\">";
+					echo "<input type=\"hidden\" name=\"ISBN\" value='{$row['isbn']}'>";
+					echo "</form>";
+					if(!empty($_SESSION['manager'])&&$_SESSION['manager']==1) {
+						echo "<form action=\"./edit_book.php\" method=\"POST\">";
+						echo "<input type=\"submit\" value=\"Edit Book\">";
+						echo "<input type=\"hidden\" name=\"ISBN\" value='{$row['isbn']}'>";
+						echo "</form>";
+					}
+				}
+				echo "</div>";
                 
                 $i = $i +1;
               }
