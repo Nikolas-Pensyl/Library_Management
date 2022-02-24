@@ -40,7 +40,7 @@
             $searcher = $_POST['Search_Field'];
             
             //The line below is the one with the issue
-            $stmt = "SELECT * from books where title='{$searcher}';"; 
+            $stmt = "SELECT * from books where title like '%{$searcher}%';"; 
             
             //It is telling me that my varialbe '$stmt' is empty
             $result = mysqli_query($conn, $stmt);

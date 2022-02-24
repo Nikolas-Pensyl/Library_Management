@@ -18,7 +18,7 @@
 	} else {
 		$short = 0;
 	}
-	$stmt = "INSERT INTO books (isbn, title, author, copies, shor_term) VALUES ('{$ISBN}', '{$title}', '{$author}', '{$count}', {$short});";
+	$stmt = "INSERT INTO books (isbn, title, author, copies, short_term) VALUES ('{$ISBN}', '{$title}', '{$author}', '{$count}', {$short});";
 
 	
 	
@@ -29,6 +29,6 @@
 	} else {
 	    echo "Error: Cannot add new library member.<br>" . mysqli_error($conn);
 	}
-	//echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
+	echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Book.php'>";
 
 ?>
