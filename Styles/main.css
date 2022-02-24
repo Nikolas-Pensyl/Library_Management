@@ -40,11 +40,13 @@
 .lght-clr{
 	background-color: rgb(100, 100,  100); 
 	color: rgb(255, 255, 255);
+	margin: 6px;
 }
 
 .dck-clr{
 	background-color: rgb(200, 200, 200); 
 	color: rgb(10, 10, 10); 
+	margin: 6px;
 }
 
 .search{
@@ -55,4 +57,9 @@
 .searchtxt{
 	margin-left: 10px;
 	text-align: left;
+}
+
+.centerbut {
+
+  top: 50%;
 }

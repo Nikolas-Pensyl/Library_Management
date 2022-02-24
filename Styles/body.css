@@ -1,6 +1,6 @@
 .mainbody{
     background-color: gray;
-    position: fixed;
+    position: absolute;
     left: 5%;
     right: 5%;
     top: 100px;
@@ -10,11 +10,12 @@
 
 .mainbods{
     background-color: gray;
-    position: fixed;
+    position: absolute;
     top: 150px;
     left: 5%;
     right: 5%;
     bottom: 0px;
     z-index: -1;
+    margin: 10px;
 }
 

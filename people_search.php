@@ -44,11 +44,9 @@
             
             
             $searcher = $_POST['Search_Field'];
-            
-            //The line below is the one with the issue
+			
             $stmt = "SELECT * from members where fname='{$searcher}' or lname='{$searcher}';"; 
             
-            //It is telling me that my varialbe '$stmt' is empty
             $result = mysqli_query($conn, $stmt);
 
             if ($result->num_rows > 0) {
@@ -60,8 +58,11 @@
                 } else {
                   echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Name: " . $row["fname"]."  ". $row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p><br><br>";
                 }
-				echo "<form action=\"./edit_person.php\" method=\"POST\">";
-                
+				echo "<form class=\"centerbut\" action=\"./edit_person.php\" method=\"POST\">";
+				echo "<input type=\"submit\" value=\"edit\">";
+				$id = $row["id"];
+				echo "<input type=\"hidden\" name=\"id\" value='{$id}'>";
+				echo "</form></div>";
                 $i = $i +1;
               }
             } else {

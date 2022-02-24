@@ -1,8 +1,18 @@
 <?php
 	session_start();
+	
 	if(empty($_SESSION['manager']) || $_SESSION['manager']==0) {
 		echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
 	}
+
+	include 'CONNECT.php';
+	$id = $_POST['id'];
+	$stmt = "SELECT * from members where id='{$id}';"; 
+	$result = mysqli_query($conn, $stmt);
+	$row = $result->fetch_assoc();
+	$stmt = "SELECT * from login where id='{$id}';"; 
+	$result = mysqli_query($conn, $stmt);
+	$rows = $result->fetch_assoc();
 	?>
 
 <!DOCTYPE html>
@@ -32,17 +42,24 @@
 		</div>
     <div>
 			<div class = "mainbody center"><div>
-					<form action="./add_member.php" method="POST">
-                        <label for="fname">First name:  </label><input class="input" id="fname" type="text" name="fname"><br><br>
-                        <label for="lname">Last name:  </label><input class="input" id="lname" type="text" name="lname"><br><br>
-                        <label for="phone">Phone number:  </label><input class="input" id="phone" type="text" name="phone"><br><br>
-                        <label for="address">Address:  </label><input class="input" id="address" type="text" name="address"><br><br>
-                        <label for="staff">Is staff?  </label><input class="input" id="staff" type="checkbox" name="staff"><br><br>
-						<label for="usern">Username:  </label><input class="input" id="usern" type="text" name="usern"><br><br>
-                        <label for="passw">Password:  </label><input class="input" id="passw" type="password" name="passw"><br><br>
-						<label for="conpassw">Confirm Password:  </label><input class="input" id="conpassw" type="password" name="conpassw"><br><br>
-						<script src="edit_register_person.js"></script>
-						<input type="submit" value="Edit New Member">
+					<form action="./edit_member.php" method="POST">
+                        <label for="fname">First name:  </label><input class="input" id="fname" type="text" name="fname" value=<?php echo"'{$row['fname']}'"; ?> ><br><br>
+                        <label for="lname">Last name:  </label><input class="input" id="lname" type="text" name="lname" value=<?php echo"'{$row['lname']}'"; ?> ><br><br>
+                        <label for="phone">Phone number:  </label><input class="input" id="phone" type="text" name="phone" value=<?php echo"'{$row['phone']}'"; ?> ><br><br>
+                        <label for="address">Address:  </label><input class="input" id="address" type="text" name="address" value=<?php echo"'{$row['address']}'"; ?> ><br><br>
+                        <label for="staff">Is staff?  </label><input class="input" id="staff" type="checkbox" name="staff" <?php if($row['staff']==1) {echo "checked";} ?> ><br><br>
+						<label for="manager">Is manager?  </label><input class="input" id="manager" type="checkbox" name="manager" <?php if($row['staff']==1) {if($row['manager']==1){echo "checked";}}?>><br><br>
+						<label for="usern">Username:  </label><input class="input" id="usern" type="text" name="usern" <?php if($row['staff']==1) {echo "value='{$rows['user']}'";} ?> ><br><br>
+                        <label for="passw">Password:  </label><input class="input" id="passw" type="password" name="passw" <?php if($row['staff']==1) {echo "value='{$rows['pass']}'";} ?> ><br><br>
+						<label for="conpassw">Confirm Password:  </label><input class="input" id="conpassw" type="password" name="conpassw" ><br><br>
+						<input type="hidden" id="id" name="id" value=<?php echo"'{$id}'";?>>
+						<?php
+							if($row['staff']==1) {
+								echo "<script src=\"./Scripts/edit_person.js\"></script>";
+							} else {
+								echo "<script src=\"./Scripts/edit_register_person.js\"></script>";
+							} ?>
+						<input type="submit" value="Edit Member">
 					</form>
 				</div>
 			</div>
