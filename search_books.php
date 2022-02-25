@@ -62,7 +62,7 @@
 					if(!empty($_SESSION['manager'])&&$_SESSION['manager']==1) {
 						echo "<form action=\"./edit_book.php\" method=\"POST\">";
 						echo "<input type=\"submit\" value=\"Edit Book\">";
-						echo "<input type=\"hidden\" name=\"ISBN\" value='{$row['isbn']}'>";
+						echo "<input type=\"hidden\" name=\"isbn\" value='{$row['isbn']}'>";
 						echo "</form>";
 					}
 				}
