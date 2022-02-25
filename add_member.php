@@ -18,14 +18,14 @@
 	$pass = $_POST["passw"];
 	if($isStaff=="on") {
 		if($manager=="on") {
-			$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 1, 1);";
+			$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', BIN(1), BIN(1));";
 		} else {
-			$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 1, 0);";
+			$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', BIN(1), BIN(0));";
 		}
 		$stmtt = "INSERT INTO login (id, user, pass) VALUES (NULL, '{$user}', '{$pass}');";
 		$result = mysqli_query($conn, $stmt);
 	} else {
-		$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', 0, 0);";
+		$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', BIN(0), BIN(0));";
 		$stmtt = "INSERT INTO login (id, user, pass) VALUES (NULL, NULL, NULL);";
 		$result = mysqli_query($conn, $stmt);
 	}

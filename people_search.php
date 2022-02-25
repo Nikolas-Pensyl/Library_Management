@@ -32,8 +32,8 @@
 			<h6 class = "Intro">Start by searching for a person you want to edit or delete then click on edit or to based on your desire.</h6>
 		</div>
 		<div>
-			<div class = "mainbods center">
-				<div>
+			<div class = "mainbods">
+				<div class ="center">
 					<form action="./people_search.php" method="POST">
 						<input class = "span" id="Search_Field" type="text" name="Search_Field">
 						<input  type="submit" value="Search">
@@ -44,8 +44,8 @@
             
             
             $searcher = $_POST['Search_Field'];
-			
-            $stmt = "SELECT * from members where fname='{$searcher}' or lname='{$searcher}';"; 
+
+            $stmt = "SELECT * from members where fname like '{$searcher}';"; 
             
             $result = mysqli_query($conn, $stmt);
 
@@ -54,12 +54,12 @@
               $i = 1;
               while($row = $result->fetch_assoc()) {
                 if($i%2==0) {
-                  echo "<div class=\"dck-clr search\"><p class=\"searchtxt\">".$i . ".    Name: " . $row["fname"]." ".$row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p><br><br>";
+                  echo "<div class=\"dck-clr search\"><p class=\"searchtxt\">".$i . ".    Name: " . $row["fname"]." ".$row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p>";
                 } else {
-                  echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Name: " . $row["fname"]."  ". $row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p><br><br>";
+                  echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Name: " . $row["fname"]."  ". $row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p>";
                 }
 				echo "<form class=\"centerbut\" action=\"./edit_person.php\" method=\"POST\">";
-				echo "<input type=\"submit\" value=\"edit\">";
+				echo "<input type=\"submit\" value=\"Edit Person\">";
 				$id = $row["id"];
 				echo "<input type=\"hidden\" name=\"id\" value='{$id}'>";
 				echo "</form></div>";

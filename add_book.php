@@ -14,9 +14,9 @@
 
 
 	if(!empty($short)&&$short=="on") {
-		$short = 1;
+		$short = BIN(1);
 	} else {
-		$short = 0;
+		$short = BIN(0);
 	}
 	$stmt = "INSERT INTO books (isbn, title, author, copies, short_term) VALUES ('{$ISBN}', '{$title}', '{$author}', '{$count}', {$short});";
 
