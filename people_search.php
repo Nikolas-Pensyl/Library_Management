@@ -44,8 +44,7 @@
             
             
             $searcher = $_POST['Search_Field'];
-
-            $stmt = "SELECT * from members where fname like '{$searcher}';"; 
+            $stmt = "SELECT * from members where fname like '%{$searcher}%' or lname like '%{$searcher}%';"; 
             
             $result = mysqli_query($conn, $stmt);
 
