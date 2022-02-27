@@ -55,10 +55,11 @@
 						echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Title: " . $row["title"]. " <br />Author: " . $row["author"]. "<br /> ISBN: " . $row["isbn"]. "</p>";
 						}
 						if(!empty($_SESSION['id'])&&!empty($_SESSION['staff'])&&$_SESSION['staff']==1) {
-							echo "<form class=\"centerbut\" action=\"./checkout_form.php\" method=\"POST\">";
-							echo "<input type=\"submit\" value=\"Checkout\">";
-							echo "<input type=\"hidden\" name=\"ISBN\" value='{$row['isbn']}'>";
-							echo "</form>";
+							echo "
+								<form class=\"centerbut\" action=\"./checkout.php\" method=\"POST\">
+								<input type=\"submit\" value=\"Checkout\">
+								<input type=\"hidden\" name=\"ISBN\" value='{$row['isbn']}'>
+							</form>";
 							if(!empty($_SESSION['manager'])&&$_SESSION['manager']==1) {
 								echo "<form class=\"centerbut\" action=\"./edit_book.php\" method=\"POST\">";
 								echo "<input type=\"submit\" value=\"Edit Book\">";
