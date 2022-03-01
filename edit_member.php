@@ -17,6 +17,21 @@
 	$user = $_POST["usern"];
 	$pass = $_POST["passw"];
     $id = $_POST["id"];
+	$conpassw = $_POST["conpassw"];
+
+	if(empty($fname) || empty($lname) || empty($address) || empty($phone)) {
+		$_SESSION["fail"] =1;
+		$_SESSION["editid"] = $id;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = edit_person.php'>";
+	} else if(!empty($phone) && !ctype_digit($phone)) {
+		$_SESSION["fail"] =1;
+		$_SESSION["editid"] = $id;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = edit_person.php'>";
+	} else if (!empty($isStaff) && (empty($user) || empty($pass) || empty($conpassw) || (!empty($conpassw) && !empty($pass) && $conpassw!=$pass))) {
+		$_SESSION["fail"] =1;
+		$_SESSION["editid"] = $id;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = edit_person.php'>";
+	} else {
 
 	if($isStaff=="on") {
 		if($manager=="on") {
@@ -37,14 +52,17 @@
 	if($result) {
 		$result = mysqli_query($conn, $stmtt);
 		if($result) {
-			echo $isStaff;
-			echo "Success!";
+			$_SESSION["success"] = 1;
+			echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
 		} else {
-			echo "Error: Cannot add new library members.<br>" . mysqli_error($conn);
+			$_SESSION["fail"] =1;
+		$_SESSION["editid"] = $id;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = edit_person.php'>";
 		}
 	} else {
-	    echo "Error: Cannot add new library member.<br>" . mysqli_error($conn);
+	    $_SESSION["fail"] =1;
+		$_SESSION["editid"] = $id;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = edit_person.php'>";
 	}
-	//echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
-
+}
 ?>

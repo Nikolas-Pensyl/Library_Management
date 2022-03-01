@@ -15,6 +15,16 @@
 	$count = $_POST['count'];
 	$short = $_POST['short'];
 
+	if(empty($ISBN) || empty($author) || empty($title) || empty($count)) {
+		$_SESSION["fail"] =1;
+		$_SESSION["ISBN"] = $ISBN;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = edit_book.php'>";
+	} else if(!empty($count) && $count<1) {
+		$_SESSION["fail"] =1;
+		$_SESSION["ISBN"] = $ISBN;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = edit_book.php'>";
+	} else {
+
 	if($short=="on") {
         $stmt = "update books set isbn='{$ISBN}', author='{$author}', title='{$title}', copies='{$count}', short_term=BIN(1) where isbn='{$oldisbn}';";
 		
@@ -26,10 +36,14 @@
 	
 	
 	if($result) {
-	    echo "Success!";
+		$_SESSION["success"] = 1;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
 	} else {
-	    echo "Error: Cannot add new library member.<br>" . mysqli_error($conn);
+	    $_SESSION["fail"] =1;
+		$_SESSION["ISBN"] = $ISBN;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = edit_book.php'>";
 	}
-	//echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
+	//
+}
 
 ?>

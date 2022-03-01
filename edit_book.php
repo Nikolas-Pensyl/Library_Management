@@ -6,7 +6,14 @@
 	}
 
 	include 'CONNECT.php';
-	$isbn = $_POST['isbn'];
+	if(!empty($_SESSION["fail"])) {
+		echo "<script> alert( \" Failed to edit book try agian \" );</script>";
+		unset($_SESSION["fail"]);
+		$isbn = $_SESSION["ISBN"];
+		unset($_SESSION["ISBN"]);
+	} else {
+		$isbn = $_POST['isbn'];
+	}
 	$stmt = "SELECT * from books where isbn='{$isbn}';"; 
 	$result = mysqli_query($conn, $stmt);
 	$row = $result->fetch_assoc();

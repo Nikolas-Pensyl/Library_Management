@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	if(!empty($_SESSION["success"])) {
+		echo "<script> alert( \" Sucessfully performed the operation \" );</script>";
+		unset($_SESSION["success"]);
+	} else if(!empty($_SESSION["fail"])) {
+		echo "<script> alert( \" Failed to perform the operation \" );</script>";
+		unset($_SESSION["fail"]);
+	}
+?>
 <!DOCTYPE html>
 <html>	
 	<head>

@@ -6,7 +6,14 @@
 	}
 
 	include 'CONNECT.php';
-	$id = $_POST['id'];
+	if(!empty($_SESSION["fail"])) {
+		echo "<script> alert( \" Failed to edit person try agian \" );</script>";
+		unset($_SESSION["fail"]);
+		$id = $_SESSION["editid"];
+		unset($_SESSION["editid"]);
+	} else {
+		$id = $_POST['id'];
+	}
 	$stmt = "SELECT * from members where id='{$id}';"; 
 	$result = mysqli_query($conn, $stmt);
 	$row = $result->fetch_assoc();

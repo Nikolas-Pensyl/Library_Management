@@ -24,7 +24,7 @@
 	} else if(!empty($phone) && !ctype_digit($phone)) {
 		$_SESSION["fail"] =1;
 		echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Person.php'>";
-	} else if (!empty($isStaff) && (empty($user) || empty($pass) || empty($conpass) || (!empty($conpassw) && !empty($pass) && $conpassw!=$pass))) {
+	} else if (!empty($isStaff) && (empty($user) || empty($pass) || empty($conpassw) || (!empty($conpassw) && !empty($pass) && $conpassw!=$pass))) {
 		$_SESSION["fail"] =1;
 		echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Person.php'>";
 	} else {
