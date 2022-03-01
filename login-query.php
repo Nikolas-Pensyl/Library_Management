@@ -12,6 +12,11 @@
     $user = $_POST['User_Field'];
     $pass = $_POST['Pass_Field'];
 
+    if(empty($_POST['User_Field']) || empty($_POST['Pass_Field'])) {
+        $_SESSION["Previous"] = 1;
+        header("Location: ./login.php"); 
+    } else {
+
     $stmt = "SELECT * from login where user='{$user}' and pass='{$pass}';";
 
     $result = mysqli_query($conn, $stmt);
@@ -41,5 +46,6 @@
         echo "test";
 	}
 	header("Location: ./main.php");
+    }
 
 ?>

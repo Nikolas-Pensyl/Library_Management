@@ -3,6 +3,10 @@
 	if(!empty($_SESSION['id'])) {
 		echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
 	}
+	if(!empty($_SESSION["Previous"])) {
+		echo "<script> alert(\"Make sure all fields are entered\");</script>";
+		unset($_SESSION["Previous"]);
+	}
 	?>
 <!DOCTYPE html>
 <html>	

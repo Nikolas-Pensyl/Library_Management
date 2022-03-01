@@ -38,6 +38,9 @@
 					
 					
 					$searcher = $_POST['Search_Field'];
+					if(empty($searcher)) {
+						echo "<script> alert(\"Make sure to actually enter a value\");</script>";
+					} else {
 					
 					//The line below is the one with the issue
 					$stmt = "SELECT * from books where title like '%{$searcher}%';"; 
@@ -74,8 +77,9 @@
 						$i = $i +1;
 					}
 					} else {
-					echo "0 results";
+					echo "<h3 class=\"center\">0 results</h3>";
 					}
+				}
 
 				?>
 			</div>

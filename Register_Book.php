@@ -3,6 +3,14 @@
 	if(empty($_SESSION['manager']) || $_SESSION['manager']==0) {
 		echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
 	}
+	if(!empty($_SESSION["success"])) {
+		echo "<script> alert( \" Book successfully registered \" );</script>";
+		unset($_SESSION["success"]);
+	} 
+	else if(!empty($_SESSION["fail"])) {
+		echo "<script> alert( \" Book failed to registered. Make sure all fields are properly filled in. \" );</script>";
+		unset($_SESSION["fail"]);
+	}
 ?>
 <!DOCTYPE html>
 <html>	

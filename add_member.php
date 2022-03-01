@@ -16,6 +16,19 @@
 	$manager = $_POST['manager'];
 	$user = $_POST["usern"];
 	$pass = $_POST["passw"];
+	$conpassw = $_POST["conpassw"];
+
+	if(empty($fname) || empty($lname) || empty($address) || empty($phone)) {
+		$_SESSION["fail"] =1;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Person.php'>";
+	} else if(!empty($phone) && !ctype_digit($phone)) {
+		$_SESSION["fail"] =1;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Person.php'>";
+	} else if (!empty($isStaff) && (empty($user) || empty($pass) || empty($conpass) || (!empty($conpassw) && !empty($pass) && $conpassw!=$pass))) {
+		$_SESSION["fail"] =1;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Person.php'>";
+	} else {
+
 	if($isStaff=="on") {
 		if($manager=="on") {
 			$stmt = "INSERT INTO members (id, fname, lname, address, phone, staff, manager) VALUES (NULL, '{$fname}', '{$lname}', '{$address}', '{$phone}', BIN(1), BIN(1));";
@@ -35,14 +48,16 @@
 	if($result) {
 		$result = mysqli_query($conn, $stmtt);
 		if($result) {
-			echo $isStaff;
-			echo "Success!";
+			$_SESSION["success"] = 1;
 		} else {
-			echo "Error: Cannot add new library members.<br>" . mysqli_error($conn);
+			$_SESSION["fail"] =1;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Person.php'>";
 		}
 	} else {
-	    echo "Error: Cannot add new library member.<br>" . mysqli_error($conn);
+		$_SESSION["fail"] =1;
+		echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Person.php'>";
 	}
-	//echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
+}
+	echo "<meta http-equiv = 'Refresh' content = '0; url = Register_Person.php'>";
 
 ?>

@@ -44,6 +44,9 @@
             
             
             $searcher = $_POST['Search_Field'];
+			if(empty($searcher)) {
+				echo "<script> alert(\"Make sure to actually enter a value\");</script>";
+			} else {
             $stmt = "SELECT * from members where fname like '%{$searcher}%' or lname like '%{$searcher}%';"; 
             
             $result = mysqli_query($conn, $stmt);
@@ -65,8 +68,9 @@
                 $i = $i +1;
               }
             } else {
-              echo "0 results";
+				echo "<h3 class=\"center\">0 results</h3>";
             }
+		}
 
           ?>
 			</div>
