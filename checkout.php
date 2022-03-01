@@ -1,13 +1,16 @@
 <?php
 
 include "CONNECT.php";
-
+session_start();
+if(empty($_SESSION['id'])||empty($_SESSION['staff'])||$_SESSION['staff']==0) {
+    echo "<meta http-equiv = 'Refresh' content = '0; url = main.php'>";
+}
 echo "
 	<script type=text/javascript>
 		var member = prompt('Enter the member ID for the customer:');
 	</script>
 	";
-$member = "<script type=text/javascript> document.write(member); </script>";
+$member = "<script type=\"text/javascript\"> document.write(member); </script>";
 
 $ISBN = $_POST['ISBN'];
 

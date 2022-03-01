@@ -63,6 +63,11 @@
 								<input type=\"submit\" value=\"Checkout\">
 								<input type=\"hidden\" name=\"ISBN\" value='{$row['isbn']}'>
 							</form>";
+							echo "
+							<form class=\"centerbut\" action=\"./checkin.php\" method=\"POST\">
+							<input type=\"submit\" value=\"CheckIn\">
+							<input type=\"hidden\" name=\"ISBN\" value='{$row['isbn']}'>
+						</form>";
 							if(!empty($_SESSION['manager'])&&$_SESSION['manager']==1) {
 								echo "<form class=\"centerbut\" action=\"./edit_book.php\" method=\"POST\">";
 								echo "<input type=\"submit\" value=\"Edit Book\">";

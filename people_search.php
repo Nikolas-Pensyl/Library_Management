@@ -56,9 +56,9 @@
               $i = 1;
               while($row = $result->fetch_assoc()) {
                 if($i%2==0) {
-                  echo "<div class=\"dck-clr search\"><p class=\"searchtxt\">".$i . ".    Name: " . $row["fname"]." ".$row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p>";
+                  echo "<div class=\"dck-clr search\"><p class=\"searchtxt\">".$i . ".         Id: ". $row["id"] ."</br> Name: " . $row["fname"]." ".$row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p>";
                 } else {
-                  echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".    Name: " . $row["fname"]."  ". $row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p>";
+                  echo "<div class=\"lght-clr search\"><p class=\"searchtxt\">". $i. ".         Id: ". $row["id"] ."</br> Name: " . $row["fname"]."  ". $row["lname"]." <br />Phone: " . $row["phone"]. "<br /> Address: " . $row["address"]. "</p>";
                 }
 				echo "<form class=\"centerbut\" action=\"./edit_person.php\" method=\"POST\">";
 				echo "<input type=\"submit\" value=\"Edit Person\">";
